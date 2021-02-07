@@ -1,0 +1,54 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  margin: 0;
+}
+.main-body{
+  background-color: hsl(185, 75%, 39%);
+  margin: 0;
+  height:100%;
+  overflow: hidden;
+  position: relative;
+}
+.circular-pattern-top{
+  position: relative;
+  bottom:70%;
+  right: 23%;
+}
+.circular-pattern-bottom{
+  position: relative;
+left: 50%;
+bottom: 93%;
+}
+.middle-container{
+background-color: white;
+position: absolute;
+top: 50%;
+left:50%;
+transform: translate(-50%,-50%);
+border-radius: 1em;
+box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.2);
+padding: 2rem;
+}
+.bold{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: hsl(227, 10%, 46%);
+}
+.btn{
+  background-color: hsl(185, 75%, 39%);
+}
+@media (max-width:991px) {
+  .circular-pattern-top{
+    height: 100px;
+
+  }
+  .circular-pattern-bottom{
+    position: relative;
+  left: 50%;
+  bottom: 93%;
+  }
+}
