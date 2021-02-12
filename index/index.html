@@ -19,34 +19,35 @@
     <img src="images\bg-pattern-top.svg" alt="circular-pattern-top" class="circular-pattern-top">
     <img src="images\bg-pattern-bottom.svg" alt="circular-pattern-bottom" class="circular-pattern-bottom">
 
-    <div class="upper-container">Hindi to Urdu Convertor</div>
-    <div class="middle-container">
-      <div class="container">
-
+    <div class="card">
+      <h1><div class="card-header">Urdu To Hindi Convertor</div></h1>
+        <!-- <div class="card-body"> -->
+          <div class="container">
         <div class="mb-3 row">
-          <div class="col-sm-7">
-            <label for="Textarea1" class="form-label bold">Enter your word</label>
+          <div class="col-sm-6">
+            <label for="Textarea1" class="form-label bold">Urdu</label>
+      
+            <textarea class="form-control " id="Textarea2" type="text" placeholder="Enter text" aria-label="default input" rows="2"></textarea>
           </div>
 
-          <div class="col">
-            <input class="form-control " id="Textarea2" type="text" aria-label="default input">
+          <div class="col-sm-6">
+            <label for="Textarea2" class="form-label bold">Hindi</label>
+  
+            <textarea class="form-control " id="Textarea2" type="text" placeholder="Alternative" aria-label="default input" rows="2"></textarea>
           </div>
-
         </div>
-        <div class="mb-3 row">
-          <div class="col">
-            <label for="Textarea2" class="form-label bold">Alternative</label>
-          </div>
-
-          <div class="col">
-            <input class="form-control " id="Textarea2" type="text" aria-label="default input">
+      <div class="row">
+        <div class="col">
+          <div class="changer">
+            <center>
+            <button class="btn btn-primary" type="button">Convert</button>
+            </center>
           </div>
         </div>
       </div>
-      <div class="d-grid gap-2 col-6 ">
-  <button class="btn btn-primary" type="button">Convert</button>
-  <button class="btn btn-primary" type="button">Revert</button>
-</div>
+    </div>
+    <!-- </div> -->
+    </div>
 </body>
 
 </html>
