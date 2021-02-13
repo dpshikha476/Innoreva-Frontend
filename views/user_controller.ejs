@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width , initial-scale= 1.0">
+  <title>Urdu-Hindi Converter</title>
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- googele fonts -->
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container upper-container" style="    background-color: white;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+    
+    border-radius: 0.4em;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    color: hsl(185, 75%, 39%);
+    font-size: 2.1rem;
+    font-weight:550;
+    font-family: 'Times New Roman', serif;/*Georgia, serif;*/">
+
+    <form method="POST" action="/add" onsubmit="addHandler()">
+        <h2 style="margin-top: 15px;
+        margin-bottom: 15px;">Enter values to be added in the database</h2>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control"  placeholder="Urdu Word" name='addUrdu' required>
+          </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control"  placeholder="Hindi Word" name='addHindi' required>
+          </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  <form method="POST" action="/updateUrdu" onsubmit="updateUrduHandler()">
+    <h2 style="margin-top: 15px;
+    margin-bottom: 15px;">Enter The Urdu Word To Update</h2>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control"  placeholder="Urdu Word" name='updateUrdu' required>
+      </div>
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control"  placeholder="Where Hindi Word is" name="Hindi" required>
+      </div>
+    </div>
+<button type="submit" class="btn btn-primary">update</button>
+</form>
+
+<form method="POST" action="/updateHindi" onsubmit="updateHindiHandler()">
+    <h2 style="margin-top: 15px;
+    margin-bottom: 15px;">Enter The Hindi Word To Update</h2>
+    <div class="form-row">  
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control"  placeholder="Where Urdu Word is"  name='Urdu' required>
+      </div>
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control"  placeholder="Hindi Word" name='updateHindi' required>
+      </div>
+    </div>
+<button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+</div>
+<script>
+    function addHandler(){
+        alert("Words added in database")
+    }
+    function updateHindiHandler(){
+        alert("Hindi word updated")
+    }
+    function updateUrduHandler(){
+        alert("Urdu added in database")
+    }
+</script>
+</body>
+</html>

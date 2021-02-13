@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width , initial-scale= 1.0">
+  <title>Urdu-Hindi Converter</title>
+<!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- googele fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+<!--font-awesome--> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+ 
+</head>
+<body>
+  
+  <div class="main-body">
+    <img src="images\bg-pattern-top.svg" alt="circular-pattern-top" class="circular-pattern-top">
+    <img src="images\bg-pattern-bottom.svg" alt="circular-pattern-bottom" class="circular-pattern-bottom">
+    </div>
+    <form action="/convert" method="POST">
+    <div class="card">
+      <h1><div class="card-header">Urdu To Hindi Convertor</div></h1>
+          <div class="container">
+        <div class="mb-3 row">
+          <div class="col-sm-6">
+            <label for="Textarea1" class="form-label bold">Urdu</label>
+            <textarea id="word" onchange="getValue()" data-gramm_editor="false" class="form-control"  type="text" placeholder="Enter text"  rows="2" name='word'></textarea>
+          </div>
+          <div class="col-sm-6">
+            <label for="Textarea2" class="form-label bold">Hindi</label>
+              <div style="font-size: 1.1rem; word-spacing: 4px;">
+              
+                <% text_new.map((array,index)=>{ %>
+                  <% if(array.status == 0){ %>
+                    <span><%= array.hindi[0] %></span>
+                  <% } else{ %>  
+                     <span class="drop">
+                       <span class='mainWord'>
+                      <%= array.hindi[0]%>
+                      </span>
+                     <div class="drop_menu">
+                      <% array.hindi.map((arr)=>{%>
+                        <p  onclick="changeHandler(event,'<%=index%>')"><span><%= arr %></span> </p>
+                       <%})%>
+                     </div>
+                     </span>
+                 <% } %>
+                <%})%>
+              
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col">
+          <div class="changer">
+            <center>
+            <button class="btn btn-primary" type="submit">Convert</button>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+  <div style="position: absolute; bottom: 0; right: 0; margin: 20px; color: white;">
+    <i class="fa fa-database" aria-hidden="true"><a href="/user_controller" style="text-decoration: none; color : white;font-size: 1.2rem; padding: 20px;" >Manage Dictionary</a>
+    </div></i>
+</body>
+
+<script>
+  var data
+  function changeHandler(e,i) {
+    var target = e.target ;
+    document.getElementsByClassName('mainWord')[i].innerHTML = target.innerHTML
+  }
+  function store(){
+      data = document.getElementById('word').value
+      localStorage.setItem('text',data)
+  }
+  
+  document.getElementById('word').value = localStorage.getItem('storeValue')
+
+  function getValue()
+  {
+      storeValue = document.getElementById('word').value
+      localStorage.setItem('storeValue',storeValue)
+  }
+</script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</html>

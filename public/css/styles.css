@@ -6,7 +6,6 @@ body{
   margin: 0;
 }
 
-
 .card-header{
   background-color: hsl(185, 56%, 58%);
   color: hsl(0, 0%, 100%);
@@ -91,7 +90,7 @@ textarea[type=text] {
 }
 
 textarea::-webkit-input-placeholder {
-    font-size: 2rem;
+    font-size: 1rem;
     /* line-height: 3; */
     color: hsl(0, 0%, 75%);
 }
@@ -129,6 +128,27 @@ textarea::-webkit-input-placeholder {
   .container{
     margin-top: 30px;
   }
+}
+.drop{
+   position: relative;
+   display: inline-block;
+   text-decoration: underline;
+   text-decoration-color: red;
+   text-decoration-thickness: 2px;
+
+}
+.drop_menu{
+   position: absolute;
+   background-color:  hsl(185, 75%, 39%);
+   color: white;
+   padding: 5px 15px 5px 15px;
+   border-radius: 5px;
+   display: none;
+   cursor: pointer;
+}
+
+.drop:hover .drop_menu{
+   display: block;
 }
 
 @media (max-width:576px){
