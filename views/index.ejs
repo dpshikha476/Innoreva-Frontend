@@ -43,7 +43,11 @@
                       </span>
                      <div class="drop_menu">
                       <% array.hindi.map((arr)=>{%>
-                        <p  onclick="changeHandler(event,'<%=index%>')"><span><%= arr %></span> </p>
+                        <p  onclick="changeHandler(event,'<%=index%>')">
+
+                          <!-- modify to display in single line -->
+                          <span><%=array.urdu%> - <%= arr %></span> 
+                        </p>
                        <%})%>
                      </div>
                      </span>
